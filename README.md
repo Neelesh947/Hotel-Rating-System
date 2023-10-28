@@ -1,2 +1,2 @@
 # Hotel-Rating-System
-User can see the list of hotel he rate
+User can rate the hotel from the list and he can see the hotel list he rate 
