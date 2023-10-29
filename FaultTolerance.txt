@@ -1,0 +1,7 @@
+In this project the user service commpunicate with the rating service and rating service communicate with the hotel service. But if some how rating service is down then how can the user service get hotel service. To handle this fault we use faulty tolerance.
+
+Circuit breaker: We will not send requests as long as the rating service is down.
+
+	close state(suppose threshold 5, means 5 times requets)--------------->open state(suppose 5 sec time frame)-------------------------->half-open( few request he get success)(success rate more and failure rate less then)---------------->close state
+
+For habndle this we will use java library resiliance4j circuit breaker.
