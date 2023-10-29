@@ -1,0 +1,5 @@
+This functionality allows us to limiting the access of the service.
+This is used so that our server may not be crashed.
+
+
+Some user might be possible that he make more than request that the server can handle. In this case our server might be crased. To handle this situation we implement Rate Limiter in our projects.
