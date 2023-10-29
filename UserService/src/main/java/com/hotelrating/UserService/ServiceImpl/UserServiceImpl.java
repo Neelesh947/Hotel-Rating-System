@@ -19,6 +19,7 @@ import com.hotelrating.UserService.Model.User;
 import com.hotelrating.UserService.Repository.UserRepository;
 import com.hotelrating.UserService.Service.UserService;
 import com.hotelrating.UserService.external.HotelServices;
+import com.hotelrating.UserService.external.ratingService;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -31,6 +32,8 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private HotelServices hotelServices;
+	
+	private ratingService ratingService;
 	
 	//private Logger log=LoggerFactory.getLogger(UserServiceImpl.class);
 	
@@ -55,6 +58,8 @@ public class UserServiceImpl implements UserService{
 		//fetch rating of the above user from Rating Service
 		//localhost:8083/ratings/users/9c4d8513-46b2-48f6-9fbc-50e575427a3a
 		Ratings[] ratingsofUsers=restTemplate.getForObject("http://RATING-SERVICE/ratings/users/"+user.getUserid(), Ratings[].class);
+		
+		//Ratings ratings=ratingService.getRating(user.getUserid());
 		
 		List<Ratings> ratings=Arrays.stream(ratingsofUsers).toList();
 		
