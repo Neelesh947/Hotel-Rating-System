@@ -51,7 +51,6 @@ public class UserController {
 	@GetMapping("/{userid}")
 	//@CircuitBreaker(name="ratingHotelBreaker", fallbackMethod = "ratingHotelFallback")
 	//@Retry(name="ratingHotelService",fallbackMethod = "ratingHotelFallback")
-	
 	@RateLimiter(name="userRateLimiter", fallbackMethod = "ratingHotelFallback")
 	public ResponseEntity<User> getSingleUser(@PathVariable String userid)
 	{
