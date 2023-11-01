@@ -1,4 +1,4 @@
-package com.hotelrating.UserService.Config.Interceptor;
+package com.hotelrating.UserService.Config.Interceptors;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
